@@ -1,0 +1,152 @@
+[
+  {
+    "stationid": "1-25EGFEF",
+    "brand": "United",
+    "name": "United Petroleum Umina",
+    "address": "307-313 Ocean Beach Road, UMINA BEACH NSW 2257",
+    "latitude": -33.511231,
+    "longitude": 151.318092,
+    "fuel_prices": {
+      "DL": 188.7,
+      "E10": 173.7,
+      "E85": 219.9,
+      "P95": 190.7,
+      "P98": 196.7,
+      "PDL": 190.7,
+      "U91": 175.7
+    },
+    "lastupdated": "21/09/2023 02:35:10"
+  },
+  {
+    "stationid": "1-27WFD0H",
+    "brand": "United",
+    "name": "United Petroleum Wilberforce",
+    "address": "539 Wilberforce Rd, WILBERFORCE NSW 2756",
+    "latitude": -33.56288,
+    "longitude": 150.83842,
+    "fuel_prices": {
+      "DL": 164.5,
+      "E10": 159.5,
+      "LPG": 109.9,
+      "P95": 178.5,
+      "P98": 181.5,
+      "U91": 161.5
+    },
+    "lastupdated": "29/04/2025 04:55:01"
+  },
+  {
+    "stationid": "1-2AHQUAN",
+    "brand": "Ampol",
+    "name": "Toowoon Bay Service Station",
+    "address": "142 Bay Rd, TOOWOON BAY NSW 2261",
+    "latitude": -33.360126,
+    "longitude": 151.497039,
+    "fuel_prices": {
+      "DL": 179.9,
+      "P95": 179.9
+    },
+    "lastupdated": "14/05/2025 21:21:08"
+  },
+  {
+    "stationid": "1-2AHS0MQ",
+    "brand": "Metro Fuel",
+    "name": "Metro Petroleum Oakflats",
+    "address": "80-82 Central Ave, OAK FLATS NSW 2529",
+    "latitude": -34.562617,
+    "longitude": 150.819412,
+    "fuel_prices": {
+      "E10": 159.9,
+      "P98": 179.9,
+      "PDL": 169.9,
+      "U91": 161.9
+    },
+    "lastupdated": "14/05/2025 07:50:28"
+  },
+  {
+    "stationid": "1-2AYH9N2",
+    "brand": "Ampol",
+    "name": "Ampol Foodary Brunswick Heads Rh",
+    "address": "5 Tweed St, BRUNSWICK HEADS NSW 2483",
+    "latitude": -28.538168,
+    "longitude": 153.548694,
+    "fuel_prices": {
+      "E10": 177.9,
+      "P95": 195.9,
+      "P98": 203.9,
+      "PDL": 191.9,
+      "U91": 179.9
+    },
+    "lastupdated": "31/03/2025 04:02:34"
+  },
+  {
+    "stationid": "1-2AYI8Y1",
+    "brand": "Ampol",
+    "name": "Ampol Foodary Lambton",
+    "address": "422 Newcastle Road, NORTH LAMBTON NSW 2299",
+    "latitude": -32.9095591,
+    "longitude": 151.7109683,
+    "fuel_prices": {
+      "E10": 157.9,
+      "P95": 173.9,
+      "P98": 177.9,
+      "PDL": 163.9
+    },
+    "lastupdated": "21/05/2025 22:02:33"
+  },
+  {
+    "stationid": "1-2AYMU0Y",
+    "brand": "Ampol",
+    "name": "Ampol Nyngan",
+    "address": "39 Pangee St, NYNGAN NSW 2825",
+    "latitude": -31.560944,
+    "longitude": 147.191497,
+    "fuel_prices": {
+      "DL": 177.7,
+      "P98": 194.7,
+      "U91": 172.7
+    },
+    "lastupdated": "24/04/2025 02:07:38"
+  },
+  {
+    "stationid": "1-2AYNI03",
+    "brand": "EG Ampol",
+    "name": "EG Ampol West Ryde",
+    "address": "924 Victoria Rd, WEST RYDE NSW 2114",
+    "latitude": -33.810887,
+    "longitude": 151.093485,
+    "fuel_prices": {
+      "E10": 151.9,
+      "P95": 168.9,
+      "P98": 177.9,
+      "PDL": 173.9,
+      "U91": 153.9
+    },
+    "lastupdated": "21/05/2025 03:08:10"
+  },
+  {
+    "stationid": "1-2B7BB1X",
+    "brand": "Ampol",
+    "name": "TASCO Leeton Vance Rd",
+    "address": "44-46 Vance Rd, LEETON NSW 2705",
+    "latitude": -34.54381,
+    "longitude": 146.387014,
+    "fuel_prices": {
+      "DL": 179.9
+    },
+    "lastupdated": "20/05/2025 04:13:32"
+  },
+  {
+    "stationid": "1-2B7GTJU",
+    "brand": "Transwest Fuels",
+    "name": "Transwest Fuels",
+    "address": "286 Manilla St, MANILLA NSW 2346",
+    "latitude": -30.7397134,
+    "longitude": 150.7162884,
+    "fuel_prices": {
+      "DL": 171.9,
+      "P95": 189.9,
+      "U91": 169.9
+    },
+    "lastupdated": "15/05/2025 22:30:22"
+  }
+]

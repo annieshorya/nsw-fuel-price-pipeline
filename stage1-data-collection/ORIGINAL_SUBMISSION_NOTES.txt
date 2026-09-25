@@ -1,0 +1,13 @@
+COMP5339 - Group 51
+Project Stage 1
+
+Our submission includes:
+
+	1. Comp5339group51.py : Python source File containing  the complete data pipeline for 	retrieving, integrating, preprocessing, and storing NSW FuelCheck fuel price data for 	analysis.
+
+	2. requirements.txt : listing all Python packages required to run the 
+	program.
+
+	3. Project_Report.pdf : structured report about our project.
+	
+	4. Petrol_Stations.txt : additional dataset that you obtained in Data Augmentation as 	text file. 

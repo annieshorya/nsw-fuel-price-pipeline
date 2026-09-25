@@ -1,0 +1,15 @@
+# Hand-picked dependencies (the original submission's requirements.txt was a raw
+# `pip freeze` of a whole Anaconda environment with hundreds of unrelated packages
+# and Windows-local file paths - it would not install on another machine).
+requests==2.32.3
+pandas==2.2.3
+numpy==2.2.6
+python-dotenv==1.0.1
+paho-mqtt==2.1.0
+filelock==3.18.0
+folium==0.19.6
+streamlit==1.45.1
+streamlit-autorefresh==1.0.1
+streamlit-folium==0.25.0
+matplotlib==3.10.3
+seaborn==0.13.2
