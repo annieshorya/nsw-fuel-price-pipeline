@@ -79,8 +79,14 @@ Re-run steps 3 → 6 whenever new files are added. `COPY INTO` skips files it ha
 - Stage 1 ran `drop_duplicates()` on the last monthly file only, not the combined data — de-duplication now happens across all files in staging.
 - API credentials moved out of the code into `.env` (see `stage2-realtime-pipeline/.env.example`).
 
+## Related layers in this repo
+
+- **PostgreSQL + dbt** (`warehouse/postgres/`, `../dbt/fuel_dbt/`): the same raw → staging → marts design
+  running locally in Docker, with dbt tests. Porting the dbt project to a Snowflake target is the next step.
+- **Orchestration** (`../orchestration/airflow/`): hourly extract → load → `dbt build` DAG (work in progress).
+- **Cloud ingestion** (`../cloud/aws/`): Lambda → S3 raw zone, which a Snowflake external stage can read (work in progress).
+
 ## Next steps
 
-- Port staging/marts to **dbt** models with `unique` / `not_null` / `relationships` tests (dbt Projects on Snowflake).
-- Schedule loads (Snowflake Tasks or Airflow) and switch to incremental loads.
-- Containerise the publisher with Docker.
+- Point dbt at Snowflake (profile + `snowflake__` versions of the safe-cast macros) and retire the hand-run 03/04 scripts.
+- Switch to incremental loads (Snowpipe from the S3 raw zone, incremental dbt models).

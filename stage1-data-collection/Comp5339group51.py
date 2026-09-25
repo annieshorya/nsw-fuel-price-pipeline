@@ -9,11 +9,11 @@ Original file is located at
 # **FuelCheck Data Retrieval and Processing**
 ## COMP5339 Project Assignment Stage 1
 
-- Adnan Ali (540372210)
-- Akarsh kumar (540892291)
-- Akshat Jain  (540775374)
-- Annie Shorya (540540853)
-- Kevin Ninan Mathew (540489161)
+- Adnan Ali
+- Akarsh kumar
+- Akshat Jain 
+- Annie Shorya
+- Kevin Ninan Mathew
 
 ## **Loading Libraries**
 """

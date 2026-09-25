@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Landing tables written by warehouse/postgres/load_snapshot.py (all columns TEXT).
+    tables:
+      - name: api_price_snapshot
+        description: One row per station x fuel type per API pull / file.
+        loaded_at_field: _loaded_at
+        columns:
+          - name: _source_file
+            tests: [not_null]

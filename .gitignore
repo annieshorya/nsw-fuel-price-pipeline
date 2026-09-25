@@ -4,3 +4,17 @@ __pycache__/
 .vscode/
 *.json.lock
 .DS_Store
+
+# dbt
+dbt/fuel_dbt/target/
+dbt/fuel_dbt/logs/
+dbt/fuel_dbt/dbt_packages/
+dbt/fuel_dbt/profiles.yml
+logs/
+
+# tests / tooling
+.pytest_cache/
+
+# AWS SAM build output and the client copied in at build time
+.aws-sam/
+cloud/aws/lambda_ingest/fuelcheck_client.py

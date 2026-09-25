@@ -1,0 +1,48 @@
+# AWS SAM template (work in progress, not deployed yet).
+#   cp ../../../ingestion/fuelcheck_client.py .   # package the shared client with the function
+#   sam build && sam deploy --guided
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Hourly NSW FuelCheck pull -> S3 raw zone
+
+Parameters:
+  FuelCheckSecretArn:
+    Type: String
+    Description: Secrets Manager secret holding FUELCHECK_API_KEY and FUELCHECK_AUTH_HEADER
+
+Resources:
+  RawBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  IngestFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.lambda_handler
+      Runtime: python3.12
+      CodeUri: .
+      Timeout: 60
+      MemorySize: 256
+      Environment:
+        Variables:
+          RAW_BUCKET: !Ref RawBucket
+          # Resolved at deploy time from Secrets Manager (never hard-coded)
+          FUELCHECK_API_KEY: !Sub "{{resolve:secretsmanager:${FuelCheckSecretArn}:SecretString:FUELCHECK_API_KEY}}"
+          FUELCHECK_AUTH_HEADER: !Sub "{{resolve:secretsmanager:${FuelCheckSecretArn}:SecretString:FUELCHECK_AUTH_HEADER}}"
+      Policies:
+        - S3WritePolicy:
+            BucketName: !Ref RawBucket
+      Events:
+        Hourly:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)
+
+Outputs:
+  RawBucketName:
+    Value: !Ref RawBucket

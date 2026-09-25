@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_api_prices
+    description: Typed and de-duplicated FuelCheck snapshot; dq_issue labels rows the marts exclude.
+    columns:
+      - name: dq_issue
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - missing station id
+                  - missing or invalid coordinates
+                  - outside NSW/ACT bounding box
+                  - missing fuel type
+                  - unparseable price
+                  - unparseable timestamp
+                  - price outside 50-500 c/L

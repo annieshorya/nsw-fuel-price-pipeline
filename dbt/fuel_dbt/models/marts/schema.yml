@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_station
+    description: One row per fuel station (API station id).
+    columns:
+      - name: station_id
+        tests: [unique, not_null]
+      - name: latitude
+        tests: [not_null]
+      - name: longitude
+        tests: [not_null]
+
+  - name: dim_fuel_type
+    description: Fuel codes with readable names and the is_liquid_fuel flag.
+    columns:
+      - name: fuel_code
+        tests: [unique, not_null]
+
+  - name: fct_current_price
+    description: Latest price per station x fuel type.
+    columns:
+      - name: station_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_station')
+                field: station_id
+      - name: fuel_code
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_fuel_type')
+                field: fuel_code
+      - name: price_cents
+        tests: [not_null]
+
+  - name: dq_summary
+    description: Row counts passed / excluded by data-quality reason.

@@ -1,0 +1,14 @@
+# Copy to ~/.dbt/profiles.yml (or set DBT_PROFILES_DIR to this folder and rename to profiles.yml).
+# Values default to the docker-compose Postgres; override with environment variables.
+fuel_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | as_number }}"
+      dbname: "{{ env_var('POSTGRES_DB', 'fuel') }}"
+      user: "{{ env_var('POSTGRES_USER', 'fuel') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'fuel') }}"
+      schema: analytics
+      threads: 4

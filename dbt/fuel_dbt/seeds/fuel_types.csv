@@ -1,0 +1,11 @@
+fuel_code,fuel_name,fuel_group,is_liquid_fuel,sort_order
+U91,Unleaded 91,Petrol,true,1
+E10,Ethanol 94 (E10),Petrol,true,2
+P95,Premium Unleaded 95,Petrol,true,3
+P98,Premium Unleaded 98,Petrol,true,4
+E85,Ethanol 105 (E85),Petrol,true,5
+DL,Diesel,Diesel,true,6
+PDL,Premium Diesel,Diesel,true,7
+B20,Biodiesel 20,Diesel,true,8
+LPG,LPG,Gas,true,9
+EV,EV charging,Electric,false,10

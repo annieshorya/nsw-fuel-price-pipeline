@@ -1,0 +1,32 @@
+# Local stack for the pipeline: PostgreSQL warehouse + Mosquitto MQTT broker.
+#   docker compose up -d
+# Postgres:  localhost:5432  (db/user/password from .env, defaults below)
+# MQTT:      localhost:1883
+services:
+  postgres:
+    image: postgres:16
+    container_name: fuel-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-fuel}
+      POSTGRES_USER: ${POSTGRES_USER:-fuel}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fuel}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./warehouse/postgres/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-fuel} -d ${POSTGRES_DB:-fuel}"]
+      interval: 5s
+      retries: 10
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: fuel-mqtt
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./docker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+
+volumes:
+  pgdata:

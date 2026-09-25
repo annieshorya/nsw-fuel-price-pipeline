@@ -1,0 +1,31 @@
+name: fuel_dbt
+version: "0.1.0"
+config-version: 2
+profile: fuel_dbt
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  fuel_dbt:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table
+
+seeds:
+  fuel_dbt:
+    +schema: marts
+    fuel_types:
+      +column_types:
+        fuel_code: text
+        fuel_name: text
+        fuel_group: text
+        is_liquid_fuel: boolean
+        sort_order: integer

@@ -13,3 +13,8 @@ streamlit-autorefresh==1.0.1
 streamlit-folium==0.25.0
 matplotlib==3.10.3
 seaborn==0.13.2
+
+# Warehouse, transformation and tests (2026 extension)
+psycopg2-binary>=2.9
+dbt-postgres>=1.10
+pytest>=7
